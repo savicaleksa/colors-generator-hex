@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  max-height: 100vh;
+}
+.container {
+  display: flex;
+}
+
+.item {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+}
+
+.banner {
+  background: #ffffff;
+  height: 90vh;
+}
+button {
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+}
+input[type='color'] {
+  width: 30px;
+  height: 30px;
+  border: 0;
+}
+.inner-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  .content {
+    background: rgba($color: #000000, $alpha: 0.5);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    padding: 0.5rem;
+    color: white;
+    .lock {
+      margin: 0.5rem 0;
+      border: 0;
+      outline: 0;
+      &.locked {
+        background: rgba($color: white, $alpha: 0.5);
+        color: red;
+      }
+    }
+    .hex-value {
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+  }
+}
+
+#generate {
+  width: 100%;
+  height: 10vh;
+  background: #53687e;
+  border: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+
+  &:hover {
+    background: #3a4454;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
+  }
+  .banner {
+    height: calc(90vh / 5);
+  }
+
+  button {
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+  }
+  input[type='color'] {
+    width: 20px;
+    height: 20px;
+    border: 0;
+  }
+
+  .inner-container {
+    .content {
+      background: rgba($color: #000000, $alpha: 0);
+      .hex-value {
+        font-size: 0.7rem;
+      }
+    }
+  }
+}
